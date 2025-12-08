@@ -33,8 +33,6 @@ ENV/
 *.swo
 
 # 数据文件
-*.npy
-*.index
 *.json.bak
 
 # 日志
