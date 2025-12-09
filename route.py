@@ -35,7 +35,7 @@ async def _translate(request: web.Request, dumps: Callable[[Any], str], source_l
     try:
         data = await request.json()
         req = TranslationRequest(**data)
-        req.text = req.text.replace('\r', '').strip()
+        req.text = req.text.replace('\r', '').replace('^^', '\n').strip()
 
         # 使用增强翻译
         enhanced_result = get_translator().translate(EnhancedTranslationRequest(
